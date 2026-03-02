@@ -30,8 +30,3 @@ Esse método aumenta o nível da bateria.
 Regras:
 - Não permite valores menores ou iguais a zero.
 - Não permite que a bateria ultrapasse 100%.
-
-Exemplo de uso:
-
-```java
-notebook.carregarBateria(30);
