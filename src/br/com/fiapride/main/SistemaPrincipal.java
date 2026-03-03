@@ -13,13 +13,21 @@ public class SistemaPrincipal {
         notebook2.carregarBateria(20);
 
         System.out.println(" Sistema Notebook ");
-        System.out.println("Notebook: " + notebook1.marca + " | Cor: " + notebook1.cor + " | Bateria: " + notebook1.bateria + "%");
-        System.out.println("Notebook: " + notebook2.marca + " | Cor: " + notebook2.cor + " | Bateria: " + notebook2.bateria + "%");
+        System.out.println("Notebook: " + notebook1.getMarca() + 
+                           " | Cor: " + notebook1.getCor() + 
+                           " | Bateria: " + notebook1.getBateria() + "%");
+
+        System.out.println("Notebook: " + notebook2.getMarca() + 
+                           " | Cor: " + notebook2.getCor() + 
+                           " | Bateria: " + notebook2.getBateria() + "%");
 
         System.out.println("Usando notebook 1");
         notebook1.usarNotebook(40);
 
         System.out.println("Usando notebook 2");
         notebook2.usarNotebook(80);
+
+        System.out.println("Tentando burlar o sistema...");
+        notebook1.setBateria(150);
     }
 }

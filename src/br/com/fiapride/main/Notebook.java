@@ -2,14 +2,42 @@ package br.com.fiapride.main;
 
 public class Notebook {
     
-    public String marca;
-    public String cor;
-    public int bateria;
+    private String marca;
+    private String cor;
+    private int bateria;
 
     public Notebook(String marca, String cor) {
+        this.setMarca(marca);
+        this.setCor(cor);
+        this.setBateria(50);
+    }
+
+    public String getMarca() {
+        return this.marca;
+    }
+
+    public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public String getCor() {
+        return this.cor;
+    }
+
+    public void setCor(String cor) {
         this.cor = cor;
-        this.bateria = 50;
+    }
+
+    public int getBateria() {
+        return this.bateria;
+    }
+
+    public void setBateria(int bateria) {
+        if (bateria < 0 || bateria > 100) {
+            System.out.println("Erro: A bateria deve estar entre 0% e 100%.");
+            return;
+        }
+        this.bateria = bateria;
     }
 
     public void carregarBateria(int valor) {
@@ -23,7 +51,7 @@ public class Notebook {
             return;
         }
 
-        this.bateria += valor;
+        this.setBateria(this.bateria + valor);
         System.out.println("Notebook carregado. Bateria atual: " + this.bateria + "%");
     }
 
@@ -43,7 +71,7 @@ public class Notebook {
             return;
         }
 
-        this.bateria -= tempoUso;
+        this.setBateria(this.bateria - tempoUso);
         System.out.println("Notebook utilizado. Bateria restante: " + this.bateria + "%");
     }
 }
