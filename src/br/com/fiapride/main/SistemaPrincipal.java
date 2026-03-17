@@ -4,30 +4,20 @@ public class SistemaPrincipal {
 
     public static void main(String[] args) {
 
-        Notebook notebook1 = new Notebook("Dell", "Preto");
-        System.out.println("Carregando notebook 1");
-        notebook1.carregarBateria(30);
+        Notebook notebook1 = new Notebook();
+        notebook1.setMarca("Dell");
+        notebook1.setCor("Preto");
 
         Notebook notebook2 = new Notebook("Samsung", "Prata");
-        System.out.println("Carregando notebook 2");
-        notebook2.carregarBateria(20);
 
-        System.out.println(" Sistema Notebook ");
-        System.out.println("Notebook: " + notebook1.getMarca() + 
-                           " | Cor: " + notebook1.getCor() + 
-                           " | Bateria: " + notebook1.getBateria() + "%");
+        Notebook notebook3 = new Notebook("Lenovo", "Cinza", 80);
 
-        System.out.println("Notebook: " + notebook2.getMarca() + 
-                           " | Cor: " + notebook2.getCor() + 
-                           " | Bateria: " + notebook2.getBateria() + "%");
+        notebook1.carregarBateria(20);
+        notebook2.usarNotebook(10);
+        notebook3.usarNotebook(30);
 
-        System.out.println("Usando notebook 1");
-        notebook1.usarNotebook(40);
-
-        System.out.println("Usando notebook 2");
-        notebook2.usarNotebook(80);
-
-        System.out.println("Tentando burlar o sistema...");
-        notebook1.setBateria(150);
+        System.out.println(notebook1.getMarca() + " " + notebook1.getBateria());
+        System.out.println(notebook2.getMarca() + " " + notebook2.getBateria());
+        System.out.println(notebook3.getMarca() + " " + notebook3.getBateria());
     }
 }
